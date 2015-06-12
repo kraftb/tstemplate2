@@ -1,0 +1,7 @@
+
+<f:be.menus.actionMenu>
+	<f:for each="{menu}" as="item">
+	<f:be.menus.actionMenuItem label="{f:translate(key: item.label)}" controller="{item.controller}" action="{item.action}" />
+	</f:for>
+</f:be.menus.actionMenu>
+

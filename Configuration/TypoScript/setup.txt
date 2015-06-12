@@ -1,0 +1,22 @@
+ 
+# Module configuration
+module.tx_tstemplate2 {
+	persistence {
+		# The storage pid has to get set for each request according to the passed "id"
+		storagePid = 0
+		classes {
+			ThinkopenAt\Tstemplate3\Domain\Model\TyposcriptTemplate {
+				mapping {
+					tableName = sys_template
+					columns {
+						config.mapOnProperty = setup
+						nextLevel.mapOnProperty = nextLevel
+						basedOn.mapOnProperty = basedOn
+						includeStaticAfterBasedOn.mapOnProperty = includeStaticAfterBasedOn
+					}
+				}
+			}
+		}
+	}
+}
+

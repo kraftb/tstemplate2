@@ -1,0 +1,101 @@
+<f:layout name="Default" />
+
+
+<f:section name="content">
+
+	<!-- TypoScriptObjectBrowser:Begin - Header section -->
+	<h1><f:translate key="moduleTitle" /></h1>
+
+	<div>
+		<h3 class="uppercase"><f:translate key="LLL:EXT:tstemplate2/Resources/Private/Language/locallang_objbrowser.xlf:currentTemplate" /></h3>
+
+		<f:render partial="currentTemplateInfo" arguments="{currentTemplate: currentTemplate}" />
+
+		<f:render partial="templateSelector" arguments="{availableTemplates: availableTemplates}" />
+
+		<!-- Spacer element -->
+		<div style="padding-top: 10px;"></div>
+
+		<div class="tsob-menu">
+			<div class="form-inline">
+				<div class="form-group">
+					<label class="control-label"><f:translate key="LLL:EXT:tstemplate2/Resources/Private/Language/locallang_objbrowser.xlf:browse" /></label>
+
+					<!-- Function Menu of module -->
+					<f:form.select name="ts_browser_type" options="{const: '{f:translate(key: \'LLL:EXT:tstemplate2/Resources/Private/Language/locallang_objbrowser.xlf:constants\')}', setup: '{f:translate(key: \'LLL:EXT:tstemplate2/Resources/Private/Language/locallang_objbrowser.xlf:setup\')}'}" />
+
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="search_field"><f:translate key="LLL:EXT:tstemplate2/Resources/Private/Language/locallang_objbrowser.xlf:search" /></label>
+					<f:form.textfield class="form-control" type="search" name="search_Field" id="search_field" style="width: 192px;" />
+				</div>
+				<f:form.submit class="btn btn-default tsob-search-submit" name="search" value="Search" />
+			</div>
+			<div class="checkbox">
+				<label for="checkTs_browser_regexsearch">
+					<f:form.checkbox name="ts_browser_regexsearch" id="checkTs_browser_regexsearch" value="1" />
+					<f:translate key="LLL:EXT:tstemplate2/Resources/Private/Language/locallang_objbrowser.xlf:regExp" />
+				</label>
+			</div>
+		</div>
+	</div>
+	<!-- TypoScriptObjectBrowser:End - Header section -->
+
+	<!-- TypoScriptObjectBrowser:Begin- Browser section -->
+	<div class="panel panel-space panel-default">
+		<div class="panel-heading">
+			<strong><f:format.case mode="upper"><f:translate key="LLL:EXT:tstemplate2/Resources/Private/Language/locallang_objbrowser.xlf:setupRoot" /></f:format.case></strong>
+		</div>
+		<div class="panel-body">
+			<div id="tree_TypoScriptObjectBrowser">
+			</div>
+<!--
+			<ul class="list-tree text-monospace">
+				<li>
+				<a class="list-tree-control list-tree-control-closed" name="a24bcf" href="/typo3/mod.php?M=web_ts&amp;moduleToken=fddd521d67f190d47c7bbadb51e0eb75ac016321&amp;id=1&amp;tsbr%5Bplugin%5D=1#a24bcf">
+					<i class="fa"></i>
+				</a>
+				<span class="list-tree-group">[<a href="/typo3/mod.php?M=web_ts&amp;moduleToken=fddd521d67f190d47c7bbadb51e0eb75ac016321&amp;id=1&amp;sObj=plugin" title="N/A">plugin</a>]</span>
+				</li>
+			</ul>
+			-->
+		</div>
+	</div>
+	<!-- TypoScriptObjectBrowser:End - Browser section -->
+
+	<!-- TypoScriptObjectBrowser:Begin - Footer section-->
+	<div>
+		<h2 class="uppercase"><f:translate key="LLL:EXT:tstemplate2/Resources/Private/Language/locallang_objbrowser.xlf:displayOptions" /></h2>
+
+		<span class="text-nowrap">
+			<div class="tsob-menu-row2">
+				<f:render partial="ObjectBrowser/DisplayOption" arguments="{option: 'ts_browser_showComments', label: 'displayComments'}" />
+				<f:render partial="ObjectBrowser/DisplayOption" arguments="{option: 'ts_browser_alphaSort', label: 'sortAlphabetically'}" />
+				<f:render partial="ObjectBrowser/DisplayOption" arguments="{option: 'ts_browser_fixedLgd', label: 'cropLines'}" />
+			</div>
+		</span>
+
+		<h2 class="uppercase"><f:translate key="LLL:EXT:tstemplate2/Resources/Private/Language/locallang_objbrowser.xlf:conditions" /></h2>
+		<div class="tsob-menu-row2">
+			<!-- TODO: Render condition checkboxes -->
+			<!--
+			<div class="checkbox">
+				<label for="check290cd0a5e40c06daab373c292d6f8c15">
+					<input class="checkbox" name="conditions[290cd0a5e40c06daab373c292d6f8c15]" id="check290cd0a5e40c06daab373c292d6f8c15" value="[globalString = IENV:HTTP_HOST = *.local]" type="checkbox">
+					[globalString = IENV:HTTP_HOST = *.local]
+				</label>
+			</div>
+			<div class="checkbox">
+				<label for="checke72c24229fb88b70088fd6737d0905f2">
+					<input class="checkbox" name="conditions[e72c24229fb88b70088fd6737d0905f2]" id="checke72c24229fb88b70088fd6737d0905f2" value="[treeLevel = 0]" type="checkbox">
+					[treeLevel = 0]
+				</label>
+			</div>
+			-->
+		</div>
+		<f:form.submit class="btn btn-default" name="Submit" value="{f:translate(key: 'LLL:EXT:tstemplate2/Resources/Private/Language/locallang_objbrowser.xlf:setConditions')}" />
+	</div>
+	<!-- TypoScriptObjectBrowser:End - Footer section-->
+
+</f:section>
+

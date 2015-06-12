@@ -1,0 +1,15 @@
+<f:layout name="Default" />
+
+
+<f:section name="content">
+	<h1><f:translate key="moduleTitle" /></h1>
+</f:section>
+
+<div>
+	<h3 class="uppercase"><f:translate key="templateInformation" /></h3>
+
+	<!-- TODO: The info module should not link again to the info module -->
+	<f:render partial="currentTemplateInfo" arguments="{currentTemplate:currentTemplate}" />
+
+
+</div>

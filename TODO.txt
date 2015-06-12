@@ -1,0 +1,26 @@
+
+TODO:
+* A lot ...
+
+TypoScript Object Browser
+=========================
+* Remove the "Folder" icons
+* Make the switch Constants/Setup work
+* Make all other controls working
+* Create a nice way to persist settings in BE_USER session
+* Retrieve conditions and display them
+* Set selected conditions when generating TypoScript
+* Handle "Display conditions"
+
+Info / Modfiy
+============
+* Almost everythinga
+
+Constant editor
+===============
+* Everything
+
+Template-Analyzer
+=================
+* Everything
+
